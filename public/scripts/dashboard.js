@@ -12,9 +12,12 @@ const show = document.querySelector('.show');
 onAuthStateChanged(auth, (user) => {
     if (user) {
         console.log(user);
+        // Fallbacks for missing displayName or photoURL
+        const displayName = user.displayName || user.email || 'User';
+        const photoURL = user.photoURL || 'images/new.PNG';
         show.innerHTML = `
-            <h3>Welcome ${user.displayName}</h3>
-            <img src="${user.photoURL}" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 100%;" />
+            <h3>Welcome ${displayName}</h3>
+            <img src="${photoURL}" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 100%; object-fit: cover; background: #eee;" />
         `
     } else {
         setTimeout(()=>{
