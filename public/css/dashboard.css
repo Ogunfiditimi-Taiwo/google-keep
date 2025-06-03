@@ -33,3 +33,14 @@ body{
     filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(120%) contrast(120%);
     /* On hover, brighten the icon for feedback */
 }
+
+.searchbar-colored-icon {
+    filter: invert(38%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(90%);
+    /* This filter matches the search bar color (rgb(82,83,85)) */
+    transition: filter 0.2s;
+}
+
+.searchbar-colored-icon:hover {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(120%) contrast(120%);
+    /* On hover, brighten the icon for feedback */
+}
