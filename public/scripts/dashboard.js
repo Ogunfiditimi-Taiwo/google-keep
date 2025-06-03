@@ -16,7 +16,7 @@ onAuthStateChanged(auth, (user) => {
         const displayName = user.displayName;
         const photoURL = user.photoURL;
         show.innerHTML = `
-            <div style="display: flex;"><img src="${photoURL}" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 100%; object-fit: cover; background: #eee;" />
+            <div style="display: flex; gap: 30px; align-items: center; justify-content: center; margin-top: 20px;"><img src="${photoURL}" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 100%; object-fit: cover; background: #eee;" />
             <p>${displayName}</p></div>
         `
     } else {
