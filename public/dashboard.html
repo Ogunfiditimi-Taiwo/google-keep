@@ -8,6 +8,25 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="bootstrap.js">
     <link rel="stylesheet" href="css/dashboard.css">
+    <style>
+        /* Add focus style for the search input */
+        input.form-control:focus {
+            background-color: #fff !important;
+            color: #222 !important;
+            border: 2px solid #fff !important;
+        }
+
+        /* Change the search icon to black on focus */
+        input.form-control:focus~span.search-icon img {
+            filter: brightness(0) invert(0);
+        }
+
+        /* Default: search icon is white */
+        span.search-icon img {
+            filter: brightness(2);
+            transition: filter 0.2s;
+        }
+    </style>
 </head>
 
 <body>
@@ -72,7 +91,7 @@
     <img src="./images/download (59).svg" alt="">
     <img src="./images/download (60).svg" alt=""> -->
 
-    <nav class="navbar bg-dark">
+    <nav class="navbar" style="background-color: rgb(32,33,36);">
         <div class="container-fluid d-flex align-items-center justify-content-between" style="width: 100%;">
             <!-- Left: Profile, Refresh, Keep -->
             <div class="d-flex align-items-center" style="gap: 12px;">
@@ -83,13 +102,13 @@
             <!-- Center: Search Bar -->
             <form class="position-relative" role="search" style="flex: 1 1 0; max-width: 700px; min-width: 320px; margin-left: 32px; margin-right: 12px;">
                 <div style="position: relative; width: 100%; display: flex; align-items: center;">
-                    <span style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #fff; pointer-events: none; display: flex; align-items: center; z-index: 2;">
-                        <img src="./images/download (45).svg" alt="" style="width: 20px; height: 20px; display: block; filter: brightness(2);" />
+                    <span class="search-icon" style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #fff; pointer-events: none; display: flex; align-items: center; z-index: 2;">
+                        <img src="./images/download (45).svg" alt="" style="width: 20px; height: 20px; display: block;" />
                     </span>
-                    <input class="form-control" style="width: 100%; padding-left: 50px; height: 50px; background-color: rgb(82,83,85); border: 2px solid rgb(82,83,85); outline: none; color: #fff;" type="search" placeholder="Search" aria-label="Search"/>
+                    <input class="form-control" style="width: 100%; padding-left: 50px; height: 50px; background-color: rgb(82,83,85); border: 2px solid rgb(82,83,85); outline: none; color: #fff;" type="search" placeholder="Search" aria-label="Search" />
                     <button type="submit" style="margin-left: -48px; z-index: 2; background: transparent; border: none; color: #fff; font-size: 1.2em; cursor: pointer;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.398a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242 1.398a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z" />
                         </svg>
                     </button>
                 </div>
@@ -101,7 +120,7 @@
                 <img src="./images/download (25).svg" alt="" style="border-radius: 8px;" />
                 <div class="show"></div>
             </div>
-        </div>                                                                                                                                                                                                                                 
+        </div>
     </nav>
 </body>
 <script type="module" src="scripts/dashboard.js"></script>
