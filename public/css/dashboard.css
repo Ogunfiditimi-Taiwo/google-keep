@@ -22,14 +22,14 @@ body{
 }
 
 .navbar-right-icon {
-    filter: brightness(0) saturate(100%) invert(32%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(90%);
+    /* Remove background color, only apply filter to change icon color */
+    filter: invert(38%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(90%);
     /* This filter approximates the soft gray of the search bar (rgb(82,83,85)) */
-    background-color: rgb(82,83,85);
     border-radius: 8px;
     transition: filter 0.2s;
 }
 
 .navbar-right-icon:hover {
-    filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(120%) contrast(120%);
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(120%) contrast(120%);
     /* On hover, brighten the icon for feedback */
 }
