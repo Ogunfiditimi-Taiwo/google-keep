@@ -45,6 +45,14 @@ body{
     /* On hover, brighten the icon for feedback */
 }
 
+.image-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+}
+
 .image-row .img-hover-container {
     position: relative;
     display: flex;
@@ -58,22 +66,34 @@ body{
     z-index: 1;
 }
 
-.image-row .img-hover-container .img-hover-text {
+.img-hover-text-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    margin-left: 24px;
+}
+
+.img-hover-text-row .img-hover-text {
     opacity: 0;
-    transform: translateX(10px);
-    margin-left: 10px;
     background: rgba(82,83,85,0.95);
     color: #fff;
     padding: 6px 16px;
     border-radius: 8px;
     font-size: 1rem;
     white-space: nowrap;
-    pointer-events: none;
-    transition: opacity 0.2s, transform 0.2s;
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    transform: translateY(-50%) translateX(10px);
+    transition: opacity 0.2s;
+}
+
+.image-row:hover + .img-hover-text-row .img-hover-text,
+.image-row:focus-within + .img-hover-text-row .img-hover-text {
+    opacity: 1;
+}
+
+/* If the text row is inside the image row, use this selector: */
+.image-row:hover .img-hover-text-row .img-hover-text,
+.image-row:focus-within .img-hover-text-row .img-hover-text {
+    opacity: 1;
 }
 
 .image-row .img-hover-container:hover img {
