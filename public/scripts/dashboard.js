@@ -16,8 +16,8 @@ onAuthStateChanged(auth, (user) => {
         const displayName = user.displayName;
         const photoURL = user.photoURL;
         show.innerHTML = `
-            <h3>Welcome ${displayName}</h3>
-            <img src="${photoURL}" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 100%; object-fit: cover; background: #eee;" />
+            <h3>${displayName}</h3>
+            <img src="${photoURL}" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 100%; object-fit: cover; background: #eee;" />
         `
     } else {
         setTimeout(()=>{
