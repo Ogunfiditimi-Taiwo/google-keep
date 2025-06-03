@@ -73,11 +73,15 @@
     <img src="./images/download (60).svg" alt="">
 
     <nav class="navbar bg-dark">
-        <div class="container-fluid d-flex align-items-center" style="gap: 16px;">
-            <img src="images/new.PNG" alt="Profile" style="margin-left: 10px; width: 40px; height: 30px; border-radius: 50%;" />
-            <img src="./images/refresh.png" style="height: 40px;" alt="">
-            <a class="navbar-brand text-light me-3" href="#" style="margin-bottom: 0;">Keep</a>
-            <form class="position-relative" role="search" style="width: 420px; max-width: 100%; margin-left: 0;">
+        <div class="container-fluid d-flex align-items-center justify-content-between" style="width: 100%;">
+            <!-- Left: Profile, Refresh, Keep -->
+            <div class="d-flex align-items-center" style="gap: 12px;">
+                <img src="images/new.PNG" alt="Profile" style="width: 40px; height: 30px; border-radius: 50%;" />
+                <img src="./images/refresh.png" style="height: 40px;" alt="">
+                <a class="navbar-brand text-light" href="#" style="margin-bottom: 0;">Keep</a>
+            </div>
+            <!-- Center: Search Bar -->
+            <form class="position-relative mx-auto" role="search" style="flex: 1 1 0; max-width: 600px; min-width: 320px; margin: 0 32px;">
                 <div style="position: relative; width: 100%;">
                     <input class="form-control" style="width: 100%; padding-left: 50px; height: 50px; background-color: rgb(82,83,85);" type="search" placeholder="Search" aria-label="Search"/>
                     <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #888; pointer-events: none; display: flex; align-items: center;">
@@ -85,11 +89,13 @@
                     </span>
                 </div>
             </form>
-            <img src="./images/download (27).svg" alt="">
-            <img src="./images/download (26).svg" alt="">
-            <img src="./images/download (25).svg" alt="">
-
-            <div class="show"></div>
+            <!-- Right: Remaining Icons and Show -->
+            <div class="d-flex align-items-center" style="gap: 10px;">
+                <img src="./images/download (27).svg" alt="">
+                <img src="./images/download (26).svg" alt="">
+                <img src="./images/download (25).svg" alt="">
+                <div class="show"></div>
+            </div>
         </div>
     </nav>
 </body>
