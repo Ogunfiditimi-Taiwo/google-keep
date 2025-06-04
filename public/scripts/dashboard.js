@@ -54,3 +54,6 @@ onAuthStateChanged(auth, (user) => {
                 setAllBtnHover(false);
             });
         }
+
+window.signGitHub = signGitHub;
+window.signGoogle = signGoogle;
