@@ -8,50 +8,6 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="bootstrap.js">
     <link rel="stylesheet" href="css/dashboard.css">
-    <style>
-        /* Add focus style for the search input */
-        input.form-control:focus {
-            background-color: #fff !important;
-            color: #222 !important;
-            border: 2px solid #fff !important;
-        }
-
-        /* Change the search icon to black on focus */
-        input.form-control:focus~span.search-icon img {
-            filter: brightness(0) invert(0);
-        }
-
-        /* Default: search icon is white */
-        span.search-icon img {
-            filter: brightness(2);
-            transition: filter 0.2s;
-        }
-
-        .image-row {
-            flex-direction: column;
-        }
-
-        .img-hover-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .img-hover-text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 5px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .img-hover-container:hover .img-hover-text {
-            opacity: 1;
-        }
-    </style>
 </head>
 
 <body>
@@ -125,12 +81,12 @@
                 <a class="navbar-brand text-light" href="#" style="margin-bottom: 0;">Keep</a>
             </div>
             <!-- Center: Search Bar -->
-            <form class="position-relative" role="search" style="flex: 1 1 0; max-width: 700px; min-width: 320px; margin-left: 32px; margin-right: 12px;">
+            <form class="position-relative" role="search" style="flex: 1 1 0; max-width: 700px; min-width: 320px; margin-left: 32px; margin-right: 12px; color: #fff;">
                 <div style="position: relative; width: 100%; display: flex; align-items: center;">
                     <span class="search-icon" style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #fff; pointer-events: none; display: flex; align-items: center; z-index: 2;">
                         <img src="./images/download (45).svg" alt="" style="width: 20px; height: 20px; display: block;" />
                     </span>
-                    <input class="form-control text-light" style="width: 100%; padding-left: 50px; height: 50px; background-color: rgb(82,83,85); border: 2px solid rgb(82,83,85); outline: none; color: #fff;" type="search" placeholder="Search" aria-label="Search" />
+                    <input class="form-control text-light" style="width: 100%; padding-left: 50px; height: 50px; background-color:rgb(82,83,85); border: 2px solid rgb(82,83,85); outline: none; color: #fff;" type="search" placeholder="Search" aria-label="Search" />
                 </div>
             </form>
             <!-- Right: Remaining Icons and Show -->
@@ -144,16 +100,29 @@
     </nav>
     <hr style="border: none; border-top: 0.5px solid #fff; margin: 0;" />
 
-    <div class="image-row" style="flex-direction: column;">
-        <img src="./images/download (44).svg" alt="">
-        <img src="./images/download (43).svg" alt="">
-        <img src="./images/fresh.PNG" alt="">
-        <img src="./images/fresh.PNG" alt="">
-        <img src="./images/download (42).svg" alt="">
-        <img src="./images/download (41).svg" alt="">
-        <img src="./images/download (40).svg" alt="">
+    <div class="yes" style="flex-direction: column; margin-left: 20px; margin-top: 20px; color: white;">
+        <button class="yes-btn" onclick="console.log('Notes clicked')">
+            <img src="./images/download (44).svg" alt="">
+            <span class="yes-btn-text">Notes</span>
+        </button>
+        <button class="yes-btn" onclick="console.log('Reminders clicked')">
+            <img src="./images/download (43).svg" alt="">
+            <span class="yes-btn-text">Reminders</span>
+        </button>
+        <button class="yes-btn" onclick="console.log('Edit labels clicked')">
+            <img src="./images/download (42).svg" alt="">
+            <span class="yes-btn-text">Edit labels</span>
+        </button>
+        <button class="yes-btn" onclick="console.log('Archive clicked')">
+            <img src="./images/download (41).svg" alt="">
+            <span class="yes-btn-text">Archive</span>
+        </button>
+        <button class="yes-btn" onclick="console.log('Trash clicked')">
+            <img src="./images/download (40).svg" alt="">
+            <span class="yes-btn-text">Trash</span>
+        </button>
     </div>
-    <div class="img-hover-text-column">
+    <div class="hover">
         <span class="img-hover-text">Text 1</span>
         <span class="img-hover-text">Text 2</span>
         <span class="img-hover-text">Text 3</span>
@@ -163,9 +132,15 @@
         <span class="img-hover-text">Text 7</span>
     </div>
 
+    <!-- Modal Structure -->
+    <div id="customModal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:9999; justify-content:center; align-items:center;">
+        <div class="modal-content" style="background:#222; padding:32px 24px; border-radius:12px; min-width:320px; max-width:90vw; color:#fff; position:relative; text-align:center;">
+            <span id="closeModal" style="position:absolute; top:12px; right:18px; font-size:2rem; cursor:pointer;">&times;</span>
+            <img id="modalImage" src="./images/fresh.PNG" alt="Modal Image" style="max-width:120px; display:block; margin:0 auto 18px auto; border-radius:8px;" />
+            <h2 style="margin-bottom:16px;">Create a New Modal</h2>
+            <p>Edit modal. The image shows when you create a new modal.</p>
+        </div>
+    </div>
 </body>
-
-
-<script type="module" src="scripts/dashboard.js"></script>
-
+<script type="module" src="./scripts/dashboard.js"></script>
 </html>

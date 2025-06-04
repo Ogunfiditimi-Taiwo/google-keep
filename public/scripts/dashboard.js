@@ -25,3 +25,32 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
+// Get all the buttons with class 'yes-btn'
+        var yesBtns = document.querySelectorAll('.yes-btn');
+
+        // Function to add or remove the hover class from all buttons
+        function setAllBtnHover(state) {
+            for (var i = 0; i < yesBtns.length; i++) {
+                if (state) {
+                    yesBtns[i].classList.add('yes-btn-all-hover');
+                } else {
+                    yesBtns[i].classList.remove('yes-btn-all-hover');
+                }
+            }
+        }
+
+        // Add event listeners to each button
+        for (var j = 0; j < yesBtns.length; j++) {
+            yesBtns[j].addEventListener('mouseenter', function() {
+                setAllBtnHover(true);
+            });
+            yesBtns[j].addEventListener('mouseleave', function() {
+                setAllBtnHover(false);
+            });
+            yesBtns[j].addEventListener('focus', function() {
+                setAllBtnHover(true);
+            });
+            yesBtns[j].addEventListener('blur', function() {
+                setAllBtnHover(false);
+            });
+        }
