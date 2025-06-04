@@ -84,6 +84,18 @@ input.form-control:focus~span.search-icon img {
     filter: brightness(0) invert(0) !important;
 }
 
+.yes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    background: none;
+    box-shadow: none;
+    border-radius: 12px;
+    padding: 16px 0;
+    color: white;
+}
+
 .yes-btn {
     display: flex;
     align-items: center;
@@ -97,11 +109,15 @@ input.form-control:focus~span.search-icon img {
     position: relative;
     transition: background 0.2s;
     margin-bottom: 14px;
+    box-shadow: none;
 }
 
 .yes-btn img {
     max-width: 28px;
     transition: transform 0.2s;
+    filter: brightness(0) saturate(100%) invert(86%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(97%) contrast(92%);
+    background-color: transparent;
+    border-radius: 8px;
 }
 
 .yes-btn-text {
@@ -111,136 +127,13 @@ input.form-control:focus~span.search-icon img {
     font-size: 1rem;
 }
 
-/* Remove background and box-shadow from buttons */
-.yes-btn {
-    background: none;
-    box-shadow: none;
-}
-
-.yes-btn:hover,
-.yes-btn:focus,
-.yes-btn.yes-btn-all-hover {
-    background: none;
-    box-shadow: none;
-}
-
-/* .yes div has no background by default */
-.yes {
-    background: none;
-    box-shadow: none;
-    border-radius: 12px;
-    padding: 16px 0;
-}
-
-/* Show background and shadow only when any button is hovered or focused */
-.yes:hover,
-.yes:focus-within {
-    background: linear-gradient(to bottom, rgb(32, 33, 36) 0%, rgb(55, 56, 59) 100%);
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.18);
-}
-
-/* Show all button texts when any button is hovered or focused */
+.yes-btn:hover .yes-btn-text,
+.yes-btn:focus .yes-btn-text,
 .yes:hover .yes-btn-text,
 .yes:focus-within .yes-btn-text {
     opacity: 1;
 }
 
-.yes-btn .yes-btn-text {
-    opacity: 0;
-    transition: opacity 0.2s;
-}
-
 .yes-btn:last-child {
     margin-bottom: 0;
-}
-
-/* Main image hover effect */
-.hover {
-    position: relative;
-    display: inline-block;
-}
-
-.hover img {
-    transition: transform 0.2s;
-    cursor: pointer;
-    z-index: 1;
-    filter: brightness(0) saturate(100%) invert(38%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(90%);
-}
-
-.hover .img-hover-text {
-    opacity: 0;
-    background: rgba(82,83,85,0.95);
-    color: #fff;
-    padding: 6px 16px;
-    border-radius: 8px;
-    font-size: 1rem;
-    white-space: nowrap;
-    transition: opacity 0.2s;
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    transform: translateY(-50%) translateX(20px);
-    pointer-events: none;
-    z-index: 3;
-}
-
-.hover:hover .img-hover-text,
-.hover:focus-within .img-hover-text {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.hover:hover img {
-    /* Remove previous filter and set background to match search bar */
-    filter: none !important;
-    background-color:rgb(154,160,166) !important;
-    /* Optional: add border-radius for consistency with search bar */
-    border-radius: 8px;
-    transform: scale(1.18);
-    z-index: 2;
-}
-
-.yes {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-}
-
-.yes img:not([src*="fresh.PNG"]) {
-    /* Directly color the image to rgb(154,160,166) using filter math for SVGs */
-    filter: brightness(0) saturate(100%) invert(86%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(97%) contrast(92%);
-    background-color: transparent;
-    border-radius: 8px;
-}
-
-.yes img {
-    max-width: 28px;
-}
-
-.yes .img-hover-text {
-    opacity: 0;
-    background: rgba(82,83,85,0.95);
-    color: #fff;
-    padding: 6px 16px;
-    border-radius: 8px;
-    font-size: 1rem;
-    white-space: nowrap;
-    transition: opacity 0.2s;
-    position: absolute;
-    left: 120px;
-    top: 0;
-    z-index: 3;
-    pointer-events: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.yes img:hover ~ .img-hover-text,
-.yes img:focus ~ .img-hover-text,
-.yes:hover .img-hover-text,
-.yes:focus-within .img-hover-text {
-    opacity: 1;
-    pointer-events: auto;
 }
