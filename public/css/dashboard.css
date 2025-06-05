@@ -21,7 +21,7 @@ body{
     color: white;
 }
 .yes-btn:hover{
-    background: blue;
+    background: rgb(150,150,159);
 }
 /* Navbar icons */
 .navbar-right-icon {
