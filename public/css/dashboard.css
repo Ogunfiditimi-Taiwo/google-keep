@@ -96,7 +96,8 @@ input.form-control:focus~span.search-icon img {
     flex-direction: column;
     background: none;
     box-shadow: none;
-    /* border-radius: 12px; */
+    border-radius: 12px;
+    padding: 16px 0;
     color: white;
 }
 
