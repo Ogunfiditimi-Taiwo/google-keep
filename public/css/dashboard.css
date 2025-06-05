@@ -25,6 +25,7 @@ body{
     width: 20%;
     height: 50px;
     padding: 8px 25px;
+    border-radius: 20px;
 }
 /* Navbar icons */
 .navbar-right-icon {
@@ -93,11 +94,9 @@ input.form-control:focus~span.search-icon img {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
     background: none;
     box-shadow: none;
-    border-radius: 12px;
-    padding: 16px 0;
+    /* border-radius: 12px; */
     color: white;
 }
 
