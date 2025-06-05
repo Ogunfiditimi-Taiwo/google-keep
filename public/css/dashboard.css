@@ -22,9 +22,6 @@ body{
 }
 .yes-btn:hover{
     background: blue;
-    width: 20%;
-    height: 50px;
-    border-radius: 20px;
 }
 /* Navbar icons */
 .navbar-right-icon {
@@ -109,6 +106,9 @@ input.form-control:focus~span.search-icon img {
     outline: none;
     color: white;
     cursor: pointer;
+    width: 20%;
+    height: 50px;
+    border-radius: 20px;
     padding: 8px 0;
     position: relative;
     transition: background 0.2s;
