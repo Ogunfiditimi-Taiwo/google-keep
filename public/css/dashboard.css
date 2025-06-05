@@ -24,7 +24,6 @@ body{
     background: blue;
     width: 20%;
     height: 50px;
-    padding: 8px 25px;
     border-radius: 20px;
 }
 /* Navbar icons */
@@ -97,8 +96,8 @@ input.form-control:focus~span.search-icon img {
     background: none;
     box-shadow: none;
     border-radius: 12px;
-    padding: 16px 0;
     color: white;
+    padding: 16px 0;
 }
 
 .yes-btn {
