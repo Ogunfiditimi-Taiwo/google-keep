@@ -106,7 +106,7 @@ input.form-control:focus~span.search-icon img {
     outline: none;
     color: white;
     cursor: pointer;
-    width: 200%;
+    width: 160%;
     height: 50px;
     border-radius: 20px;
     padding: 8px 25px;
@@ -144,5 +144,5 @@ input.form-control:focus~span.search-icon img {
 
 .flex{
     display: flex;
-    gap: 50px;
+    gap: 200px;
 }
