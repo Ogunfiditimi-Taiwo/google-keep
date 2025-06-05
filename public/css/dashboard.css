@@ -20,7 +20,12 @@ body{
 .navbar{
     color: white;
 }
-
+.yes-btn:hover{
+    background: blue;
+    width: 20%;
+    height: 50px;
+    padding: 8px 25px;
+}
 /* Navbar icons */
 .navbar-right-icon {
     filter: invert(38%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(90%);
