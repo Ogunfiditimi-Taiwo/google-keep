@@ -302,3 +302,36 @@ input.form-control:focus~span.search-icon img {
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
 } */
+ @media (max-width: 480px) {
+  .flex {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .input-with-icons {
+    max-width: 100% !important;
+    margin: 10px 0 !important;
+  }
+  .ifs input,
+  .input-with-icons input {
+    width: 100% !important;
+    font-size: 1rem;
+  }
+  .yes {
+    flex-direction: row !important;
+    gap: 8px !important;
+    margin-left: 0 !important;
+    margin-bottom: 10px;
+  }
+  .yes-btn {
+    width: auto !important;
+    font-size: 0.9rem !important;
+    padding: 6px 8px !important;
+  }
+  .input-icons {
+    right: 5px !important;
+    gap: 5px !important;
+  }
+  #expandedInputs {
+    width: 100% !important;
+  }
+}
