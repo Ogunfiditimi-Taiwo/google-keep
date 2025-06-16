@@ -93,13 +93,11 @@
     <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0 0 0;">
         <input type="file" id="imageInput" accept="image/*" style="display: none;" />
         <img src="./images/download (18).svg" id="imageIcon" style="width: 30px; height: 30px; cursor: pointer;" alt="Add image" title="Add image" />
-        <button id="addNoteBtn" style="background: #ffc107; color: #222; border: none; border-radius: 5px; padding: 6px 16px; cursor: pointer;">Add Note</button>
     </div>
 </div>
 <!-- ...existing code... -->
     <!-- Place this inside your expanded inputs, after the noteBodyInput -->
-<!-- Add this where you want the notes to appear -->
-<div id="cardContainer" style="margin: 30px 0;"></div>
+
 </body/>
         <script type="module" src="./scripts/dashboard.js"></script>
 
@@ -206,19 +204,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Expand input on focus
-// ...existing code...
-
-// Allow adding a note directly from the collapsed noteInput by pressing Enter
-noteInput.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        // Expand the input if not already expanded
+    noteInput.addEventListener('focus', function() {
         noteInput.style.display = 'none';
         inputIcons.style.display = 'none';
         expandedInputs.style.display = 'flex';
         titleInput.focus();
-    }
-});
+    });
+
     // Click image icon to open file picker
     imageIcon.addEventListener('click', function() {
         imageInput.click();
@@ -282,4 +274,5 @@ noteInput.addEventListener('keydown', function(e) {
 
 
 </script>
+
 </html>
