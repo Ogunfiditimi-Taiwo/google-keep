@@ -81,12 +81,17 @@
                 <a class="navbar-brand text-light" href="#" style="margin-bottom: 0;">Keep</a>
             </div>
             <!-- Center: Search Bar -->
-            <form class="position-relative" role="search" style="flex: 1 1 0; max-width: 700px; min-width: 320px; margin-left: 32px; margin-right: 12px; color: #fff;">
+            <form class="position-relative" role="search"
+                style="flex: 1 1 0; max-width: 700px; min-width: 320px; margin-left: 32px; margin-right: 12px; color: #fff;">
                 <div style="position: relative; width: 100%; display: flex; align-items: center;">
-                    <span class="search-icon" style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #fff; pointer-events: none; display: flex; align-items: center; z-index: 2;">
-                        <img src="./images/download (45).svg" alt="" style="width: 20px; height: 20px; display: block;" />
+                    <span class="search-icon"
+                        style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #fff; pointer-events: none; display: flex; align-items: center; z-index: 2;">
+                        <img src="./images/download (45).svg" alt=""
+                            style="width: 20px; height: 20px; display: block;" />
                     </span>
-                    <input class="form-control text-light" style="width: 100%; padding-left: 50px; height: 50px; background-color:rgb(82,83,85); border: 2px solid rgb(82,83,85); outline: none; color: #fff;" type="search" placeholder="Search" aria-label="Search" />
+                    <input class="form-control text-light"
+                        style="width: 100%; padding-left: 50px; height: 50px; background-color:rgb(82,83,85); border: 2px solid rgb(82,83,85); outline: none; color: #fff;"
+                        type="search" placeholder="Search" aria-label="Search" />
                 </div>
             </form>
             <!-- Right: Remaining Icons and Show -->
@@ -102,34 +107,46 @@
 
 
     <div class="flex">
-        
-    <div class="yes" style="flex-direction: column;color: white;">
-        <button class="yes-btn" onclick="console.log('Notes clicked')">
-            <img src="./images/download (44).svg" alt="">
-            <span class="yes-btn-text">Notes</span>
-        </button>
-        <button class="yes-btn" onclick="console.log('Reminders clicked')">
-            <img src="./images/download (43).svg" alt="">
-            <span class="yes-btn-text">Reminders</span>
-        </button>
-        <button class="yes-btn" onclick="console.log('Edit labels clicked')">
-            <img src="./images/download (42).svg" alt="">
-            <span class="yes-btn-text">Edit labels</span>
-        </button>
-        <button class="yes-btn" onclick="console.log('Archive clicked')">
-            <img src="./images/download (41).svg" alt="">
-            <span class="yes-btn-text">Archive</span>
-        </button>
-        <button class="yes-btn" onclick="console.log('Trash clicked')">
-            <img src="./images/download (40).svg" alt="">
-            <span class="yes-btn-text">Trash</span>
-        </button>
+
+        <div class="yes" style="flex-direction: column;color: white;">
+            <button class="yes-btn" onclick="console.log('Notes clicked')">
+                <img src="./images/download (44).svg" alt="">
+                <span class="yes-btn-text">Notes</span>
+            </button>
+            <button class="yes-btn" onclick="console.log('Reminders clicked')">
+                <img src="./images/download (43).svg" alt="">
+                <span class="yes-btn-text">Reminders</span>
+            </button>
+            <button class="yes-btn" onclick="console.log('Edit labels clicked')">
+                <img src="./images/download (42).svg" alt="">
+                <span class="yes-btn-text">Edit labels</span>
+            </button>
+            <button class="yes-btn" onclick="console.log('Archive clicked')">
+                <img src="./images/download (41).svg" alt="">
+                <span class="yes-btn-text">Archive</span>
+            </button>
+            <button class="yes-btn" onclick="console.log('Trash clicked')">
+                <img src="./images/download (40).svg" alt="">
+                <span class="yes-btn-text">Trash</span>
+            </button>
+        </div>
+
+      
+            <div class="input-with-icons">
+                <div class="if">
+                    <input type="text" id="note" cols="10" rows="10" placeholder="Take a note..."></input>
+                    <span class="input-icons">
+                        <img src="./images/download (3).svg" alt="">
+                        <img src="./images/download (2).svg" alt="">
+                        <img src="./images/download (18).svg" alt="">
+                    </span>
+                </div>
+                </div>
+        </div>
     </div>
 
-    <div class="us">
-    <textarea name="note" id="note" cols="30" rows="10" placeholder="Take a note..."></textarea>
-    </div>
-    </div>
+
 </body>
 <script type="module" src="./scripts/dashboard.js"></script>
+
 </html>

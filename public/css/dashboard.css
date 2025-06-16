@@ -1,11 +1,11 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(32,33,36);
+body {
+    background-color: rgb(32, 33, 36);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -17,12 +17,42 @@ body{
     align-items: center;
 } */
 
-.navbar{
+.navbar {
     color: white;
 }
-.yes-btn:hover{
-    background: rgb(150,150,159);
+
+#note {
+    max-width: 800px;
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 1rem;
+    width: 200%; 
+    border-radius: 7px;
+    border: 0.5px solid rgb(95,99,104);
+    background: rgb(32,33,36);
+    color: #fff; 
+    padding: 15px;
 }
+.us{
+     width: 100%; 
+     max-width: 600px; 
+     margin:  auto; 
+     margin-left: 70px;
+     
+}
+
+.if{
+    position: relative; 
+    margin-top: 20px;
+     width: 50%;
+      max-width: 400px;
+}
+
+.yes-btn:hover {
+    background: rgb(150, 150, 159);
+}
+
 /* Navbar icons */
 .navbar-right-icon {
     filter: invert(38%) sepia(2%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(90%);
@@ -142,13 +172,60 @@ input.form-control:focus~span.search-icon img {
     margin-bottom: 0;
 }
 
-.flex{
+.flex {
     display: flex;
     gap: 200px;
 }
-#note{
+
+#note {
     margin-top: 30px;
     background-color: black;
-    outline: rgb(95,99,104);
-    color: rgb(95,99,104);
+    outline: rgb(95, 99, 104);
+    color: rgb(95, 99, 104);
 }
+.input-icons{
+     position: absolute; 
+     left: 500px; 
+     bottom: 250px; 
+     display: flex; 
+     gap: 10px; 
+     z-index: 2
+}
+/* New styles for input with icons */
+.input-with-icons {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-with-icons input {
+    width: 100%;
+    padding-right: 70px;
+    /* space for icons */
+    background-color: rgb(32, 33, 36);
+    border: 0.5px solid rgb(95, 99, 104);
+    border-radius: 7px;
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.input-with-icons .input-icons {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.input-with-icons .input-icons img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    filter: brightness(0) saturate(100%) invert(62%) sepia(1%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(90%);
+}
+

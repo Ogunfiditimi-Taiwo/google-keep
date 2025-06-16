@@ -55,5 +55,11 @@ onAuthStateChanged(auth, (user) => {
             });
         }
 
+// Beginner-friendly script to log the title input value when it changes
+const titleInput = document.getElementById('titleMe');
+titleInput.addEventListener('input', function() {
+  console.log('Title:', titleInput.value);
+});
+
 window.signGitHub = signGitHub;
 window.signGoogle = signGoogle;
