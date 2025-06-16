@@ -74,26 +74,204 @@
             </button>
         </div>
 
-      
-            <div class="input-with-icons" id="fool" onclick="inputMe()" style="display: block;">
-                <div class="ifs" >
-                    <input type="text"    id="note" cols="10" rows="10" placeholder="Take a note..."></input>
-                    <span class="input-icons">
-                        <img src="./images/download (3).svg" style="width: 60px; height: 25px;" alt="">
-                        <img src="./images/download (2).svg" style="width: 60px; height: 25px;" alt="">
-                        <img src="./images/download (18).svg" style="width: 60px; height: 25px;" alt="">
-                    </span>
-                </div>
-                        <div id="expandedDiv" style="display: none;">
-                        <input type="text" placeholder="Title" class="borderless-input" />
-                        <input type="text" placeholder="Take a note" class="borderless-input" />
-                    </div>
-                </div>
-        </div>
+ <div class="input-with-icons" id="fool">
+    <div class="ifs" style="position: relative;">
+        <!-- Single input shown first -->
+        <input type="text" id="noteInput" placeholder="Take a note..." autocomplete="off"
+            style="padding-right: 210px; max-width: 800px; margin-top: 30px; outline: rgb(95, 99, 104); color: rgb(95, 99, 104); font-size: 1rem; width: 200%; border-radius: 7px; border: 0.5px solid rgb(95,99,104); background: rgb(32,33,36); padding: 15px;" />
+        <span class="input-icons" id="inputIcons"
+            style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); display: flex; gap: 10px;">
+            <img src="./images/download (3).svg" style="width: 60px; height: 25px;" alt="">
+            <img src="./images/download (2).svg" style="width: 60px; height: 25px;" alt="">
+            <img src="./images/download (18).svg" style="width: 60px; height: 25px;" alt="">
+        </span>
+        <!-- Expanded inputs hidden by default -->
+<!-- ...existing code... -->
+<div id="expandedInputs" style="display: none; flex-direction: column; gap: 0; margin-top: 10px; width: 200%;">
+    <input type="text" id="titleInput" class="borderless-input" placeholder="Title" autocomplete="off" />
+    <input type="text" id="noteBodyInput" class="borderless-input" placeholder="Take a note" autocomplete="off" />
+    <div style="display: flex; align-items: center; gap: 10px; margin: 10px 0 0 0;">
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" />
+        <img src="./images/download (18).svg" id="imageIcon" style="width: 30px; height: 30px; cursor: pointer;" alt="Add image" title="Add image" />
     </div>
+</div>
+<!-- ...existing code... -->
+    <!-- Place this inside your expanded inputs, after the noteBodyInput -->
+
+</body/>
+        <script type="module" src="./scripts/dashboard.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const noteInput = document.getElementById('noteInput');
+    const inputIcons = document.getElementById('inputIcons');
+    const expandedInputs = document.getElementById('expandedInputs');
+    const titleInput = document.getElementById('titleInput');
+    const noteBodyInput = document.getElementById('noteBodyInput');
+    const cardContainer = document.getElementById('cardContainer');
+    const imageInput = document.getElementById('imageInput');
+    const imageIcon = document.getElementById('imageIcon');
+
+    // Load notes from localStorage
+    function loadNotes() {
+        cardContainer.innerHTML = '';
+        const notes = JSON.parse(localStorage.getItem('notes') || '[]');
+        notes.forEach((note, idx) => {
+            createCard(note.title, note.body, note.image, idx);
+        });
+    }
+
+    // Save notes to localStorage
+    function saveNotes() {
+        const notes = [];
+        cardContainer.querySelectorAll('.card').forEach(card => {
+            notes.push({
+                title: card.querySelector('.card-title') ? card.querySelector('.card-title').textContent : "",
+                body: card.querySelector('.card-body') ? card.querySelector('.card-body').textContent : "",
+                image: card.querySelector('img') ? card.querySelector('img').src : ""
+            });
+        });
+        localStorage.setItem('notes', JSON.stringify(notes));
+    }
+
+    // Create card element
+    function createCard(title, note, imageData, idx) {
+        const card = document.createElement('div');
+        card.className = "card";
+
+        if (title) {
+            const cardTitle = document.createElement('div');
+            cardTitle.className = "card-title";
+            cardTitle.textContent = title;
+            card.appendChild(cardTitle);
+        }
+        if (note) {
+            const cardNote = document.createElement('div');
+            cardNote.className = "card-body";
+            cardNote.textContent = note;
+            card.appendChild(cardNote);
+        }
+        if (imageData) {
+            const img = document.createElement('img');
+            img.src = imageData;
+            img.style.maxWidth = "100%";
+            img.style.marginTop = "10px";
+            img.style.borderRadius = "7px";
+            card.appendChild(img);
+        }
+
+        // Edit button
+        const editBtn = document.createElement('button');
+        editBtn.textContent = "Edit";
+        editBtn.style.marginTop = "10px";
+        editBtn.style.marginRight = "10px";
+        editBtn.style.background = "#ffc107";
+        editBtn.style.color = "#222";
+        editBtn.style.border = "none";
+        editBtn.style.borderRadius = "5px";
+        editBtn.style.padding = "6px 16px";
+        editBtn.style.cursor = "pointer";
+        editBtn.onclick = function() {
+            // Fill the expanded inputs with card data for editing
+            noteInput.style.display = 'none';
+            inputIcons.style.display = 'none';
+            expandedInputs.style.display = 'flex';
+            titleInput.value = title;
+            noteBodyInput.value = note;
+            imageInput.value = "";
+            expandedInputs.setAttribute('data-edit-idx', idx); // Mark as editing
+            titleInput.focus();
+        };
+        card.appendChild(editBtn);
+
+        // Delete button
+        const delBtn = document.createElement('button');
+        delBtn.textContent = "Delete";
+        delBtn.style.marginTop = "10px";
+        delBtn.style.background = "orange";
+        delBtn.style.color = "#222";
+        delBtn.style.border = "none";
+        delBtn.style.borderRadius = "5px";
+        delBtn.style.padding = "6px 16px";
+        delBtn.style.cursor = "pointer";
+        delBtn.onclick = function() {
+            card.remove();
+            saveNotes();
+        };
+        card.appendChild(delBtn);
+
+        cardContainer.appendChild(card);
+    }
+
+    // Expand input on focus
+    noteInput.addEventListener('focus', function() {
+        noteInput.style.display = 'none';
+        inputIcons.style.display = 'none';
+        expandedInputs.style.display = 'flex';
+        titleInput.focus();
+    });
+
+    // Click image icon to open file picker
+    imageIcon.addEventListener('click', function() {
+        imageInput.click();
+    });
+
+    // Add or Edit note on Enter in either expanded input
+    function addCardIfEnter(e) {
+        if (e.key === 'Enter') {
+            const title = titleInput.value.trim();
+            const note = noteBodyInput.value.trim();
+            const file = imageInput.files[0];
+            let imageData = "";
+
+            function finishAddOrEdit() {
+                // If editing, update the note
+                const editIdx = expandedInputs.getAttribute('data-edit-idx');
+                let notes = JSON.parse(localStorage.getItem('notes') || '[]');
+                if (editIdx !== null && editIdx !== undefined && editIdx !== "") {
+                    notes[editIdx] = { title, body: note, image: imageData };
+                    expandedInputs.removeAttribute('data-edit-idx');
+                } else {
+                    notes.push({ title, body: note, image: imageData });
+                }
+                localStorage.setItem('notes', JSON.stringify(notes));
+                loadNotes();
+                // Reset and collapse
+                titleInput.value = "";
+                noteBodyInput.value = "";
+                imageInput.value = "";
+                expandedInputs.style.display = 'none';
+                noteInput.style.display = 'block';
+                inputIcons.style.display = 'flex';
+                noteInput.value = "";
+            }
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    imageData = event.target.result;
+                    finishAddOrEdit();
+                };
+                reader.readAsDataURL(file);
+            } else {
+                // If editing and no new image, keep old image if exists
+                const editIdx = expandedInputs.getAttribute('data-edit-idx');
+                if (editIdx !== null && editIdx !== undefined && editIdx !== "") {
+                    let notes = JSON.parse(localStorage.getItem('notes') || '[]');
+                    imageData = notes[editIdx] && notes[editIdx].image ? notes[editIdx].image : "";
+                }
+                finishAddOrEdit();
+            }
+        }
+    }
+
+    titleInput.addEventListener('keydown', addCardIfEnter);
+    noteBodyInput.addEventListener('keydown', addCardIfEnter);
+
+    // Initial load
+    loadNotes();
+});
 
 
-</body>
-<script type="module" src="./scripts/dashboard.js"></script>
-
+</script>
 </html>
