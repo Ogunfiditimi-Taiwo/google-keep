@@ -5,72 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Keep</title>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="bootstrap.js">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <body>
-    <!-- <img src="./images/download (1).svg" alt="">
-    <img src="./images/download (2).svg" alt="">
-    <img src="./images/download (3).svg" alt="">
-    <img src="./images/download (4).svg" alt="">
-    <img src="./images/download (5).svg" alt="">
-    <img src="./images/download (6).svg" alt="">
-    <img src="./images/download (7).svg" alt="">
-    <img src="./images/download (8).svg" alt="">
-    <img src="./images/download (9).svg" alt="">
-    <img src="./images/download (10).svg" alt="">
-    <img src="./images/download (11).svg" alt="">
-    <img src="./images/download (12).svg" alt="">
-    <img src="./images/download (13).svg" alt="">
-    <img src="./images/download (14).svg" alt="">
-    <img src="./images/download (15).svg" alt="">
-    <img src="./images/download (16).svg" alt="">
-    <img src="./images/download (17).svg" alt="">
-    <img src="./images/download (18).svg" alt="">
-    <img src="./images/download (19).svg" alt="">
-    <img src="./images/download (20).svg" alt="">
-    <img src="./images/download (21).svg" alt="">
-    <img src="./images/download (22).svg" alt="">
-    <img src="./images/download (23).svg" alt="">
-    <img src="./images/download (24).svg" alt="">
-    <img src="./images/download (25).svg" alt="">
-    <img src="./images/download (26).svg" alt="">
-    <img src="./images/download (27).svg" alt="">
-    <img src="./images/download (28).svg" alt="">
-    <img src="./images/download (29).svg" alt="">
-    <img src="./images/download (30).svg" alt="">
-    <img src="./images/download (31).svg" alt="">
-    <img src="./images/download (32).svg" alt="">
-    <img src="./images/download (33).svg" alt="">
-    <img src="./images/download (34).svg" alt="">
-    <img src="./images/download (35).svg" alt="">
-    <img src="./images/download (36).svg" alt="">
-    <img src="./images/download (37).svg" alt="">
-    <img src="./images/download (38).svg" alt="">
-    <img src="./images/download (39).svg" alt="">
-    <img src="./images/download (40).svg" alt="">
-    <img src="./images/download (41).svg" alt="">
-    <img src="./images/download (42).svg" alt="">
-    <img src="./images/download (43).svg" alt="">
-    <img src="./images/download (44).svg" alt="">
-    <img src="./images/download (45).svg" alt="">
-    <img src="./images/download (46).svg" alt="">
-    <img src="./images/download (47).svg" alt="">
-    <img src="./images/download (48).svg" alt="">
-    <img src="./images/download (49).svg" alt="">
-    <img src="./images/download (50).svg" alt="">
-    <img src="./images/download (51).svg" alt="">
-    <img src="./images/download (52).svg" alt="">
-    <img src="./images/download (53).svg" alt="">
-    <img src="./images/download (54).svg" alt="">
-    <img src="./images/download (55).svg" alt="">
-    <img src="./images/download (56).svg" alt="">
-    <img src="./images/download (57).svg" alt="">
-    <img src="./images/download (58).svg" alt="">
-    <img src="./images/download (59).svg" alt="">
-    <img src="./images/download (60).svg" alt=""> -->
 
     <nav class="navbar" style="background-color: rgb(32,33,36);">
         <div class="container-fluid d-flex align-items-center justify-content-between" style="width: 100%;">
@@ -132,15 +75,19 @@
         </div>
 
       
-            <div class="input-with-icons">
-                <div class="if">
-                    <input type="text" id="note" cols="10" rows="10" placeholder="Take a note..."></input>
+            <div class="input-with-icons" id="fool" onclick="inputMe()" style="display: block;">
+                <div class="ifs" >
+                    <input type="text"    id="note" cols="10" rows="10" placeholder="Take a note..."></input>
                     <span class="input-icons">
-                        <img src="./images/download (3).svg" alt="">
-                        <img src="./images/download (2).svg" alt="">
-                        <img src="./images/download (18).svg" alt="">
+                        <img src="./images/download (3).svg" style="width: 60px; height: 25px;" alt="">
+                        <img src="./images/download (2).svg" style="width: 60px; height: 25px;" alt="">
+                        <img src="./images/download (18).svg" style="width: 60px; height: 25px;" alt="">
                     </span>
                 </div>
+                        <div id="expandedDiv" style="display: none;">
+                        <input type="text" placeholder="Title" class="borderless-input" />
+                        <input type="text" placeholder="Take a note" class="borderless-input" />
+                    </div>
                 </div>
         </div>
     </div>

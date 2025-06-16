@@ -23,15 +23,14 @@ body {
 
 #note {
     max-width: 800px;
-    margin-top: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    margin-top: 30px;
+    outline: rgb(95, 99, 104);
+    color: rgb(95, 99, 104);
     font-size: 1rem;
     width: 200%; 
     border-radius: 7px;
     border: 0.5px solid rgb(95,99,104);
     background: rgb(32,33,36);
-    color: #fff; 
     padding: 15px;
 }
 .us{
@@ -42,7 +41,7 @@ body {
      
 }
 
-.if{
+.ifs{
     position: relative; 
     margin-top: 20px;
      width: 50%;
@@ -177,26 +176,24 @@ input.form-control:focus~span.search-icon img {
     gap: 200px;
 }
 
-#note {
-    margin-top: 30px;
-    background-color: black;
-    outline: rgb(95, 99, 104);
-    color: rgb(95, 99, 104);
-}
+
 .input-icons{
      position: absolute; 
-     left: 500px; 
-     bottom: 250px; 
+     left: 480px; 
+     bottom: 270px; 
      display: flex; 
      gap: 10px; 
-     z-index: 2
+     z-index: 2;
+}
+#fees{
+    width: 100%;
 }
 /* New styles for input with icons */
 .input-with-icons {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 0px 20px;
 }
 
 .input-with-icons input {
@@ -209,6 +206,7 @@ input.form-control:focus~span.search-icon img {
     padding: 15px 20px;
     color: #fff;
     font-size: 1rem;
+    /* margin-left: -20px; */
     box-sizing: border-box;
 }
 
